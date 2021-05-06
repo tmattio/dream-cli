@@ -1,0 +1,4 @@
+(library
+ (name dream_cli)
+ (public_name dream-cli)
+ (libraries dream cmdliner fmt logs.fmt logs.cli))
