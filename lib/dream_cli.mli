@@ -15,6 +15,7 @@ val run
   -> ?builtins:bool
   -> ?greeting:bool
   -> ?adjust_terminal:bool
+  -> ?commands:(int Cmdliner.Term.t * Cmdliner.Term.info) list
   -> Dream.handler
   -> unit
 (** Runs the Web application represented by the [handler].

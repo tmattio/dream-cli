@@ -50,7 +50,7 @@ let man =
   ; `P "$(tname) runs the Web application, by default at http://localhost:8080."
   ]
 
-let info = Term.info "run" ~doc ~sdocs ~exits ~man
+let info = Term.info "dream" ~doc ~sdocs ~exits ~man
 
 let term
     ?interface
