@@ -35,6 +35,10 @@ install: all ## Install the packages on the system
 start: all ## Run the produced executable
 	opam exec -- dune exec --root . bin/server.exe $(ARGS)
 
+.PHONY: test
+test: ## Run the unit tests
+	opam exec -- dune test --root .
+
 .PHONY: clean
 clean: ## Clean build artifacts and other generated files
 	opam exec -- dune clean --root .
