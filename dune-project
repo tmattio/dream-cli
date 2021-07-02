@@ -1,4 +1,4 @@
-(lang dune 2.0)
+(lang dune 2.7)
 
 (name dream-cli)
 
@@ -24,4 +24,7 @@
    (>= 4.08.0))
   dune
   dream
+  logs
+  fmt
+  cmdliner
   (odoc :with-doc)))
