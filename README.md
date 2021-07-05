@@ -113,7 +113,7 @@ DREAM_VERBOSITY
     See option --verbosity.
 ```
 
-## Additionnal commands
+## Additional commands
 
 The following subcommands are provided in the generated CLI for convenience:
 
@@ -121,7 +121,7 @@ The following subcommands are provided in the generated CLI for convenience:
 
 ## Custom commands
 
-It is also possible to add custom subcommands to the CLI, but providing a `int Cmdliner.Term.t * Cmdliner.Term.info`:
+It is also possible to add custom subcommands to the CLI, by providing a `int Cmdliner.Term.t * Cmdliner.Term.info`:
 
 ```ocaml
 module Custom_command = struct
