@@ -7,7 +7,7 @@ let run len =
 
 open Cmdliner
 
-let doc = "Generate a random secret key"
+let doc = "Generate a random secret"
 
 let sdocs = Manpage.s_common_options
 
@@ -20,7 +20,7 @@ let man =
   ; `P "$(tname) will generate a random key and encode it as a Base64 string."
   ]
 
-let info = Term.info "gen-key" ~doc ~sdocs ~exits ~man ~man_xrefs
+let info = Term.info "gen-secret" ~doc ~sdocs ~exits ~man ~man_xrefs
 
 let term =
   let open Common.Syntax in
