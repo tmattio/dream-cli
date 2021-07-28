@@ -73,7 +73,7 @@ DREAM_INTERFACE env)
     argument --old-secrets) below for key rotation.
 ```
 
-Or as environmental variables:
+Or as environment variables:
 
 ```
 DREAM_CERTIFICATE_FILE
@@ -117,9 +117,9 @@ Note that in order for the command-line arguments to be recognized by Dream, and
 
 ```sh
 # esy
-npx esy start -- -p 9000
+npx esy run <my_binary> -- -p 9000
 # dune
-dune exec ./main.ml -- -p 9000
+dune exec <my_binary> -- -p 9000
 ```
 
 ## Additional commands
@@ -130,9 +130,9 @@ The following subcommands are provided in the generated CLI for convenience:
 
 ```sh
 # esy
-npx esy start gen-secret
+npx esy run <my_binary> gen-secret
 # dune
-dune exec ./main.ml gen-secret
+dune exec <my_binary> gen-secret
 ```
 
 ## Custom commands
