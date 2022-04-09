@@ -1,15 +1,9 @@
-open Cmdliner
-
 let run
     ?interface
     ?port
     ?stop
-    ?debug
     ?error_handler
-    ?secret
-    ?old_secrets
-    ?prefix
-    ?https
+    ?tls
     ?certificate_file
     ?key_file
     ?builtins
@@ -19,16 +13,12 @@ let run
     handler
   =
   let cmd_run =
-    Cmd_run.cmd
+    Cmd_run.term
       ?interface
       ?port
       ?stop
-      ?debug
       ?error_handler
-      ?secret
-      ?old_secrets
-      ?prefix
-      ?https
+      ?tls
       ?certificate_file
       ?key_file
       ?builtins
@@ -36,5 +26,11 @@ let run
       ?adjust_terminal
       handler
   in
-  let cmd_gen_key = Cmd_gen_key.cmd in
-  Term.(exit_status @@ eval_choice cmd_run ([ cmd_gen_key ] @ commands))
+  let cmd_gen_secret = Cmd_gen_secret.cmd in
+  let main =
+    Cmdliner.Cmd.group
+      ~default:cmd_run
+      Cmd_run.info
+      ([ cmd_gen_secret ] @ commands)
+  in
+  Stdlib.exit @@ Cmdliner.Cmd.eval' main

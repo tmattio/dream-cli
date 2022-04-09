@@ -4,18 +4,14 @@ val run
   :  ?interface:string
   -> ?port:int
   -> ?stop:unit Lwt.t
-  -> ?debug:bool
   -> ?error_handler:Dream.error_handler
-  -> ?secret:string
-  -> ?old_secrets:string
-  -> ?prefix:string
-  -> ?https:bool
+  -> ?tls:bool
   -> ?certificate_file:string
   -> ?key_file:string
   -> ?builtins:bool
   -> ?greeting:bool
   -> ?adjust_terminal:bool
-  -> ?commands:(int Cmdliner.Term.t * Cmdliner.Term.info) list
+  -> ?commands:int Cmdliner.Cmd.t list
   -> Dream.handler
   -> unit
 (** Runs the Web application represented by the [handler].

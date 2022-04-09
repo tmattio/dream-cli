@@ -22,9 +22,8 @@
  (depends
   (ocaml
    (>= 4.08.0))
-  dune
   dream
   logs
   fmt
-  cmdliner
-  (odoc :with-doc)))
+  (cmdliner
+   (>= 1.1.0))))
