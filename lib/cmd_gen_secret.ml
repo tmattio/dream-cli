@@ -10,8 +10,9 @@ open Cmdliner
 let doc = "Generate a random secret"
 
 let man =
-  [ `S Manpage.s_description
-  ; `P "$(tname) will generate a random key and encode it as a Base64 string."
+  [
+    `S Manpage.s_description;
+    `P "$(tname) will generate a random key and encode it as a Base64 string.";
   ]
 
 let info = Cmd.info "gen-secret" ~doc ~man

@@ -1,19 +1,19 @@
 (** Create a CLI to configure Dream applications. *)
 
-val run
-  :  ?interface:string
-  -> ?port:int
-  -> ?stop:unit Lwt.t
-  -> ?error_handler:Dream.error_handler
-  -> ?tls:bool
-  -> ?certificate_file:string
-  -> ?key_file:string
-  -> ?builtins:bool
-  -> ?greeting:bool
-  -> ?adjust_terminal:bool
-  -> ?commands:int Cmdliner.Cmd.t list
-  -> Dream.handler
-  -> unit
+val run :
+  ?interface:string ->
+  ?port:int ->
+  ?stop:unit Lwt.t ->
+  ?error_handler:Dream.error_handler ->
+  ?tls:bool ->
+  ?certificate_file:string ->
+  ?key_file:string ->
+  ?builtins:bool ->
+  ?greeting:bool ->
+  ?adjust_terminal:bool ->
+  ?commands:int Cmdliner.Cmd.t list ->
+  Dream.handler ->
+  unit
 (** Runs the Web application represented by the [handler].
 
     If one of the optional argument is provided, its value will be used

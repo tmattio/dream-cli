@@ -6,9 +6,7 @@ module Custom_command = struct
     0
 
   let info = Cmd.info "greet" ~doc:"Say hello!" ~exits:Cmd.Exit.defaults
-
   let term = Term.(const run $ const ())
-
   let cmd = Cmd.v info term
 end
 
