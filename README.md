@@ -67,13 +67,13 @@ DREAM_INTERFACE env)
 -s SECRET, --secret=SECRET (absent DREAM_SECRET env)
     a key to be used for cryptographic operations, such as signing CSRF
     tokens. By default, a random secret is generated on each call to
-    Dream.run. For production, generate a key with gen-key and load it
+    Dream.run. For production, generate a key with gen-secret and load it
     from file. A medium-sized Web app serving 1000 fresh encrypted
     cookies per second should rotate keys about once a year. See
     argument --old-secrets) below for key rotation.
 ```
 
-Or as environmnet variables:
+Or as environment variables:
 
 ```
 DREAM_CERTIFICATE_FILE
@@ -113,11 +113,27 @@ DREAM_VERBOSITY
     See option --verbosity.
 ```
 
+Note that in order for the command-line arguments to be recognized by Dream, and not by the build tool, it is necessary to prepend them with a double dash:
+
+```sh
+# esy
+npx esy run <my_binary> -- -p 9000
+# dune
+dune exec <my_binary> -- -p 9000
+```
+
 ## Additional commands
 
 The following subcommands are provided in the generated CLI for convenience:
 
-- `gen-key` - Generate a random secret key.
+- `gen-secret` - Generate a random secret.
+
+```sh
+# esy
+npx esy run <my_binary> gen-secret
+# dune
+dune exec <my_binary> gen-secret
+```
 
 ## Custom commands
 

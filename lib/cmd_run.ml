@@ -120,7 +120,7 @@ let term
       let doc =
         "a key to be used for cryptographic operations, such as signing CSRF \
          tokens. By default, a random secret is generated on each call to \
-         Dream.run. For production, generate a key with $(b,gen-key)\n\
+         Dream.run. For production, generate a key with $(b,gen-secret)\n\
          and load it from file. A medium-sized Web app serving 1000 fresh \
          encrypted cookies per second should rotate keys about once a year. \
          See argument $(b,--old-secrets)) below for key rotation."
