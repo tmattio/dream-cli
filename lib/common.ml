@@ -14,7 +14,7 @@ let rec set_current_dir dir =
 
 let term =
   let+ log_level =
-    let env = Arg.env_var "DREAM_VERBOSITY" in
+    let env = Cmd.Env.info "DREAM_VERBOSITY" in
     Logs_cli.level ~docs:Manpage.s_common_options ~env ()
   and+ dir =
     let doc =
@@ -48,7 +48,3 @@ let handle_errors = function
   | Ok 0 -> if Logs.err_count () > 0 then 3 else 0
   | Ok n -> n
   | Error _ as r -> Logs.on_error_msg ~use:(fun _ -> 3) r
-
-let exits =
-  Term.exit_info 3 ~doc:"on indiscriminate errors reported on stderr."
-  :: Term.default_exits

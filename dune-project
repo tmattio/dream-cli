@@ -22,7 +22,8 @@
  (depends
   (ocaml
    (>= 4.08.0))
-  dream
+  (dream
+   (>= 1.0.0~alpha3))
   logs
   fmt
   (cmdliner
